@@ -2,13 +2,23 @@ package com.gama.contratealguem.domain;
 
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "usuario_pj", schema = "contrate")
 public class UsuarioPj {
 	
-	
+	@Id
 	private Long cnpj;
+
 	private String email;
+	
 	private String user;
+	
 	private String nome;
+	
 	private Long telefone;
 	
 	public UsuarioPj() {
