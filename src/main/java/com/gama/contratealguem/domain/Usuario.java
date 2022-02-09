@@ -3,14 +3,20 @@ package com.gama.contratealguem.domain;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "usuario", schema = "contrate")
+@Table(name = "usuario")
 public class Usuario {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	
 	private Long cpf;
 	
 	private String email;
@@ -21,17 +27,15 @@ public class Usuario {
 	
 	private Long telefone;
 	
-	public Usuario() {
-		
+
+	public Long getId() {
+		return id;
 	}
 
-	public Usuario(Long cpf, String email, String user, String nome, Long telefone) {
-		this.cpf = cpf;
-		this.email = email;
-		this.user = user;
-		this.nome = nome;
-		this.telefone = telefone;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
 
 	public Long getCpf() {
 		return cpf;
